@@ -3,7 +3,6 @@ package mk.ukim.finki.emt.healthy_food_shop.domain.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.List;
 
 @Entity
 public class OrderItem {
