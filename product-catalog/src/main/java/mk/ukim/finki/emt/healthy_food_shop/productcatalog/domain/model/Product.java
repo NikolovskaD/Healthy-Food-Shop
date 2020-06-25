@@ -2,21 +2,20 @@ package mk.ukim.finki.emt.healthy_food_shop.productcatalog.domain.model;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;
+import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.AbstractEntity;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.financial.Money;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
-import java.util.Currency;
 
 @Entity
 @Getter
 @Table(name = "products")
 @Where(clause = "deleted=false")
-public class Product {
+public class Product extends AbstractEntity<ProductId> {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @EmbeddedId
+    private ProductId id;
 
     @Version
     private long version;
@@ -35,6 +34,11 @@ public class Product {
 
     @NotNull
     private boolean deleted = false;
+
+    @Override
+    public ProductId id() {
+        return id;
+    }
 
 //    @ManyToOne
 //    @NotNull

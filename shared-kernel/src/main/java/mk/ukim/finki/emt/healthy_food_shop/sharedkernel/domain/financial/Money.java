@@ -1,6 +1,7 @@
 package mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.financial;
 
 import lombok.Getter;
+import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.ValueObject;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.Embeddable;
@@ -10,7 +11,7 @@ import java.util.Objects;
 
 @Embeddable
 @Getter
-public class Money {
+public class Money implements ValueObject {
 
     private final Double price;
 
