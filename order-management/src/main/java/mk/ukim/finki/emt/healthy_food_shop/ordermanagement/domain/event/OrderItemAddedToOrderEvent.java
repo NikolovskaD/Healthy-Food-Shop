@@ -1,6 +1,6 @@
-package mk.ukim.finki.emt.healthy_food_shop.domain.event;
+package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.event;
 
-import mk.ukim.finki.emt.healthy_food_shop.domain.model.OrderItem;
+import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.OrderItem;
 
 public class OrderItemAddedToOrderEvent {
     public String orderId;

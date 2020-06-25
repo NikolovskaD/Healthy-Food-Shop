@@ -13,13 +13,18 @@ import java.util.List;
 @Getter
 public class Manufacturer extends AbstractEntity<ManufacturerId> {
 
-    @EmbeddedId
-    private ManufacturerId id;
-
     private String name;
 
     @Embedded
     private Address address;
+
+    public Manufacturer(){
+    }
+
+    public Manufacturer(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
 
     @JsonIgnore
     @OneToMany(mappedBy = "manufacturer")
@@ -27,6 +32,6 @@ public class Manufacturer extends AbstractEntity<ManufacturerId> {
 
     @Override
     public ManufacturerId id() {
-        return null;
+        return id;
     }
 }

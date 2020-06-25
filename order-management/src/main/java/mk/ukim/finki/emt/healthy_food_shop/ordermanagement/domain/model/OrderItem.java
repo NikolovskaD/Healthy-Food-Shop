@@ -1,20 +1,59 @@
 package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model;
 
+import lombok.Getter;
+import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.ProductId;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.AbstractEntity;
+import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.DomainObjectId;
+import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.financial.Money;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 
 @Entity
+@Getter
 @Table(name = "order_items")
 public class OrderItem extends AbstractEntity<OrderItemId> {
 
-    @EmbeddedId
-    private OrderItemId id;
-
+    @NonNull
     private Integer quantity;
 
-//    @ManyToOne
-//    private Product product;
+    @Embedded
+    private ProductId productId;
+
+    @Embedded
+    private Money itemPrice;
+
+    private OrderItem(){
+    }
+
+    public OrderItem(@NonNull ProductId productId, @NonNull Money itemPrice, @NonNull Integer quantity) {
+        super(DomainObjectId.randomId(OrderItemId.class));
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative");
+        }
+        this.quantity = quantity;
+        this.productId = productId;
+        this.itemPrice = itemPrice;
+    }
+
+    public void setQuantity(int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be negative");
+        }
+        this.quantity = quantity;
+    }
+
+    public void setProductId(ProductId productId) {
+        this.productId = productId;
+    }
+
+    public void setItemPrice(Money itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
+    public Money total() {
+        return itemPrice.multiply(quantity);
+    }
 
     @Override
     public OrderItemId id() {

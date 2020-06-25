@@ -1,6 +1,4 @@
-package mk.ukim.finki.emt.healthy_food_shop.domain.event;
-
-import mk.ukim.finki.emt.healthy_food_shop.domain.model.Product;
+package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.event;
 
 import java.time.LocalDateTime;
 
@@ -15,3 +13,4 @@ public class OrderCreatedEvent {
         this.product = product;
     }
 }
+© 2020 GitHub, Inc.
