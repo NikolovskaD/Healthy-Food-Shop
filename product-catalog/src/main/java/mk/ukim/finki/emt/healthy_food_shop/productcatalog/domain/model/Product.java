@@ -35,12 +35,12 @@ public class Product extends AbstractEntity<ProductId> {
     @NotNull
     private boolean deleted = false;
 
+    @ManyToOne
+    @NotNull
+    private Manufacturer manufacturer;
+
     @Override
     public ProductId id() {
         return id;
     }
-
-//    @ManyToOne
-//    @NotNull
-//    private Manufacturer manufacturer;
 }

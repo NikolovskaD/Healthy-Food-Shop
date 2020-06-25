@@ -1,0 +1,13 @@
+package mk.ukim.finki.emt.healthy_food_shop.productcatalog.domain.model;
+
+import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.DomainObjectId;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class ManufacturerId extends DomainObjectId {
+
+    public ManufacturerId(String id) {
+        super(id);
+    }
+}

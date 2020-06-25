@@ -3,9 +3,11 @@ package mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base;
 import lombok.Getter;
 import lombok.NonNull;
 
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 import java.util.UUID;
 
+@MappedSuperclass
 @Getter
 public class DomainObjectId implements ValueObject {
 
