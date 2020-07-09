@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 @Entity
-@Table(name="orders")
+@Table(name="order")
 @Getter
 public class Order extends AbstractEntity<OrderId> {
 

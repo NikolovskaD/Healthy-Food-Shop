@@ -12,14 +12,13 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Table(name = "products")
+@Table(name = "product")
 @Where(clause = "deleted=false")
 public class Product extends AbstractEntity<ProductId> {
 
     @Version
     private long version;
 
-    @NotNull
     private String name;
 
     @Embedded
@@ -31,18 +30,26 @@ public class Product extends AbstractEntity<ProductId> {
 
     private String imgUrl;
 
-    @NotNull
     private boolean deleted;
 
     @ManyToOne
-    @NotNull
     private Manufacturer manufacturer;
 
     public Product() {
     }
 
-    public Product(@NonNull String name, @NonNull Money price, @NonNull int quantity, @NonNull String category,
-                   @NonNull String imgUrl, @NonNull Manufacturer manufacturer) {
+    public Product(ProductId productId, String name, Money price, int quantity, String category, String imgUrl, Manufacturer manufacturer) {
+        super(productId);
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.category = category;
+        this.imgUrl = imgUrl;
+        this.manufacturer = manufacturer;
+        deleted = false;
+    }
+
+    public Product(String name, Money price, int quantity, String category, String imgUrl, Manufacturer manufacturer) {
         super(DomainObjectId.randomId(ProductId.class));
         this.name = name;
         this.price = price;
