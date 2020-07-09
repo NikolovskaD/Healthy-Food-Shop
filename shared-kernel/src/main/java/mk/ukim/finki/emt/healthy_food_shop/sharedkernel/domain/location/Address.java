@@ -19,13 +19,13 @@ public class Address implements ValueObject {
 
     private final String country;
 
-    private final Integer zipCode;
+    private final String zipCode;
 
 //    protected Address(){
 //    }
 
     public Address(@NonNull String street, @NonNull String streetNumber, @NonNull String city, @NonNull String country,
-                   @NonNull Integer zipCode) {
+                   @NonNull String zipCode) {
         this.street = street;
         this.streetNumber = streetNumber;
         this.city = city;

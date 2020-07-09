@@ -2,7 +2,7 @@ package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model;
 
 import lombok.Getter;
 import lombok.var;
-import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.ProductDto;
+import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.Product;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.AbstractEntity;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.DomainObjectId;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.financial.Currency;
@@ -79,7 +79,7 @@ public class Order extends AbstractEntity<OrderId> {
         return items.stream().map(OrderItem::total).reduce(new Money(0D, currency), Money::add);
     }
 
-    public OrderItem addItem(@NonNull ProductDto product, int qty) {
+    public OrderItem addItem(@NonNull Product product, int qty) {
         Objects.requireNonNull(product, "product must not be null");
         var item = new OrderItem(product.getId(), product.getPrice(), qty);
         item.setQuantity(qty);

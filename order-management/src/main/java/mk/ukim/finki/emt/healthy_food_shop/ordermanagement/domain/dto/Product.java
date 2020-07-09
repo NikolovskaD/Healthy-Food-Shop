@@ -4,7 +4,7 @@ import lombok.Getter;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.financial.Money;
 
 @Getter
-public class ProductDto {
+public class Product {
 
     private ProductId id;
 
