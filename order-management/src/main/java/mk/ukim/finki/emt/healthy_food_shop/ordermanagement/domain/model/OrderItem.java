@@ -1,5 +1,6 @@
 package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.ProductId;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.AbstractEntity;
@@ -10,8 +11,8 @@ import org.springframework.lang.NonNull;
 import javax.persistence.*;
 
 @Entity
-@Getter
 @Table(name = "order_items")
+@Getter
 public class OrderItem extends AbstractEntity<OrderItemId> {
 
     @Embedded
@@ -54,6 +55,12 @@ public class OrderItem extends AbstractEntity<OrderItemId> {
 
     public Money total() {
         return itemPrice.multiply(quantity);
+    }
+
+    @NonNull
+    @JsonProperty("qty")
+    public int quantity() {
+        return quantity;
     }
 
     @Override

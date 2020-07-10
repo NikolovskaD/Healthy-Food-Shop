@@ -8,14 +8,11 @@ import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.event.OrderIte
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.*;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.repository.OrderRepository;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.location.Address;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
 import java.time.Instant;
@@ -62,6 +59,7 @@ public class OrderCatalog {
     @NonNull
     public Optional<Order> findById(@NonNull OrderId orderId) {
         Objects.requireNonNull(orderId, "orderId must not be null");
+        System.out.println(orderId);
         return orderRepository.findById(orderId);
     }
 

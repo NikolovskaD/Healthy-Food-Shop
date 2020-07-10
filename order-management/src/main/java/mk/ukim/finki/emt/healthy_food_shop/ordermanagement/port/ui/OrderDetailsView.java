@@ -7,7 +7,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
-//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.OrderCatalog;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.Order;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.OrderId;
