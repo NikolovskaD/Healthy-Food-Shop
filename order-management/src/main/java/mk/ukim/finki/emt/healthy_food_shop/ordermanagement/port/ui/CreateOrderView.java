@@ -23,6 +23,7 @@ import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.form.Orde
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.form.RecipientAddressForm;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.Product;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.financial.Currency;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 
 @Route("create-order")
@@ -83,6 +84,7 @@ public class CreateOrderView extends VerticalLayout {
         tabs.setSelectedIndex(0);
     }
 
+    @PreAuthorize("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")
     private void addItem(OrderItemForm item) {
         binder.getBean().getItems().add(item);
         itemGrid.setItems(binder.getBean().getItems());
