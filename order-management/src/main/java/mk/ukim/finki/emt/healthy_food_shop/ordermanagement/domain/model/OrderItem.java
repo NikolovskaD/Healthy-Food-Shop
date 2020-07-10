@@ -14,14 +14,15 @@ import javax.persistence.*;
 @Table(name = "order_items")
 public class OrderItem extends AbstractEntity<OrderItemId> {
 
-    @NonNull
-    private Integer quantity;
-
     @Embedded
+    @AttributeOverride(name="id",column = @Column(name="product_id",nullable = false))
     private ProductId productId;
 
     @Embedded
     private Money itemPrice;
+
+    @Column(name = "qty", nullable = false)
+    private Integer quantity;
 
     private OrderItem(){
     }

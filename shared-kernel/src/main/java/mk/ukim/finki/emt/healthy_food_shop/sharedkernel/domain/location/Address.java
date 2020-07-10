@@ -11,18 +11,18 @@ import java.util.Objects;
 @Getter
 public class Address implements ValueObject {
 
-    private final String street;
+    private String street;
 
-    private final String streetNumber;
+    private String streetNumber;
 
-    private final String city;
+    private String city;
 
-    private final String country;
+    private String country;
 
-    private final String zipCode;
+    private String zipCode;
 
-//    protected Address(){
-//    }
+    protected Address(){
+    }
 
     public Address(@NonNull String street, @NonNull String streetNumber, @NonNull String city, @NonNull String country,
                    @NonNull String zipCode) {

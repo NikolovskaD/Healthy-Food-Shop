@@ -16,7 +16,7 @@ import com.vaadin.flow.data.converter.StringToIntegerConverter;
 import com.vaadin.flow.function.ValueProvider;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.OrderCatalog;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.ProductCatalog;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.form.OrderForm;

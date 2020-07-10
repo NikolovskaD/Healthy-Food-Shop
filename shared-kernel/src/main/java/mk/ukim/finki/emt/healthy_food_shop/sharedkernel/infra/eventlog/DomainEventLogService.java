@@ -1,7 +1,7 @@
 package mk.ukim.finki.emt.healthy_food_shop.sharedkernel.infra.eventlog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.DomainEvent;
 import org.springframework.stereotype.Service;
 import org.springframework.lang.NonNull;

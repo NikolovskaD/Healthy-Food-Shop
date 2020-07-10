@@ -7,17 +7,12 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.OrderCatalog;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.Order;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.OrderId;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.OrderItem;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.location.Address;
-//import mk.ukim.finki.emt.productordering.ordermanagement.application.OrderCatalog;
-//import mk.ukim.finki.emt.productordering.ordermanagement.domain.model.Order;
-//import mk.ukim.finki.emt.productordering.ordermanagement.domain.model.OrderId;
-//import mk.ukim.finki.emt.productordering.ordermanagement.domain.model.OrderItem;
-//import mk.ukim.finki.emt.productordering.ordermanagement.domain.model.RecipientAddress;
 
 import java.util.Optional;
 

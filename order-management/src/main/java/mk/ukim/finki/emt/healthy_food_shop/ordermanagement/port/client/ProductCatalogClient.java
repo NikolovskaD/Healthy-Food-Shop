@@ -1,7 +1,7 @@
 package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.port.client;
 
 
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.application.ProductCatalog;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.Product;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.ProductId;

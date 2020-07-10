@@ -6,7 +6,13 @@ public class OrderItemId extends DomainObjectId {
 
     private String id;
 
-    public OrderItemId(String id) {
-        super(id);
+    private OrderItemId() {
+        super("");
     }
+
+    public OrderItemId(String uuid) {
+        super(uuid);
+        this.id=uuid;
+    }
+
 }

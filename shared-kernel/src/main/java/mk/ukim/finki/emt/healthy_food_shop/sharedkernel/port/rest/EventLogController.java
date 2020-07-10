@@ -1,6 +1,6 @@
 package mk.ukim.finki.emt.healthy_food_shop.sharedkernel.port.rest;
 
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.infra.eventlog.DomainEventLogService;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.infra.eventlog.StoredDomainEvent;
 import org.springframework.http.ResponseEntity;

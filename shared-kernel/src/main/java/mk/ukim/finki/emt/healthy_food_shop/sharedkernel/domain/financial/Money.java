@@ -18,6 +18,11 @@ public class Money implements ValueObject {
     @Enumerated(value = EnumType.STRING)
     private final Currency currency;
 
+    protected Money(){
+        this.currency=null;
+        this.price = 0d;
+    }
+
     public Money(@NonNull Double price,@NonNull Currency currency) {
         this.price = price;
         this.currency = currency;

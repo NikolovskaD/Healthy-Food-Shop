@@ -1,6 +1,6 @@
 package mk.ukim.finki.emt.healthy_food_shop.sharedkernel.infra.eventlog;
 
-import lombok.var;
+//import lombok.var;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.lang.NonNull;
 import org.springframework.scheduling.annotation.Scheduled;

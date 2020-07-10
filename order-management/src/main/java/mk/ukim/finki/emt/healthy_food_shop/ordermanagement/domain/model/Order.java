@@ -1,7 +1,7 @@
 package mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model;
 
 import lombok.Getter;
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.dto.Product;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.AbstractEntity;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.base.DomainObjectId;
@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 @Getter
 public class Order extends AbstractEntity<OrderId> {
 

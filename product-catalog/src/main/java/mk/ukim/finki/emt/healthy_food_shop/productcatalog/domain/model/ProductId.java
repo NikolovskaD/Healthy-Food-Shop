@@ -7,6 +7,8 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class ProductId extends DomainObjectId {
 
+    private ProductId() { super(""); }
+
     public ProductId(String id) {
         super(id);
     }

@@ -1,6 +1,6 @@
 package mk.ukim.finki.emt.healthy_food_shop.productcatalog;
 
-import lombok.var;
+//import lombok.var;
 import mk.ukim.finki.emt.healthy_food_shop.productcatalog.domain.model.Manufacturer;
 import mk.ukim.finki.emt.healthy_food_shop.productcatalog.domain.model.ManufacturerId;
 import mk.ukim.finki.emt.healthy_food_shop.productcatalog.domain.model.Product;
@@ -30,25 +30,23 @@ class DataGenerator {
     @PostConstruct
     @Transactional
     public void generateData() {
-        var manufacturers = new ArrayList<Manufacturer>();
-        if (manufacturerRepository.findAll().size()==0){
+        if (manufacturerRepository.findAll().size()==0 && productRepository.findAll().size()==0){
+            var manufacturers = new ArrayList<Manufacturer>();
             manufacturers.add(createManufacturer(new ManufacturerId("1"), "Bioherbal",
-                    new Address("Envoy Ct.", "2056", "Clearwater", "USA", 33764)));
+                    new Address("Envoy Ct.", "2056", "Clearwater", "USA", "33764")));
             manufacturers.add(createManufacturer(new ManufacturerId("2"), "Galafarm",
-                    new Address("St 51, Stopanski Dvor", "23", "Skopje", "North Macedonia", 1000)));
+                    new Address("St 51, Stopanski Dvor", "23", "Skopje", "North Macedonia", "1000")));
             manufacturers.add(createManufacturer(new ManufacturerId("3"), "Probotanic",
-                    new Address("Vučićev prolaz", "21a", "Beograd", "Serbia", 11050)));
+                    new Address("Vučićev prolaz", "21a", "Beograd", "Serbia", "11050")));
             manufacturerRepository.saveAll(manufacturers);
-        }
 
-        if (productRepository.findAll().size()==0) {
             var products = new ArrayList<Product>();
             products.add(createProduct(new ProductId("1"),"Soda bez aluminijum", new Money(630d, Currency.MKD),
                     15, "Hrana", "", manufacturers.get(1)));
             products.add(createProduct(new ProductId("2"),"Origanol strong", new Money(1200d, Currency.MKD),
-                    10, "Lek", "", manufacturers.get(3)));
+                    10, "Lek", "", manufacturers.get(2)));
             products.add(createProduct(new ProductId("3"),"Jekogal ribino maslo",  new Money(450d, Currency.MKD),
-                    20, "Dodatok na ishrana", "", manufacturers.get(2)));
+                    20, "Dodatok na ishrana", "", manufacturers.get(1)));
             productRepository.saveAll(products);
         }
 
