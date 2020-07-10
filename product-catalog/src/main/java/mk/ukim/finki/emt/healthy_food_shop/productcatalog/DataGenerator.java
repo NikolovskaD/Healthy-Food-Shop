@@ -35,7 +35,7 @@ class DataGenerator {
             manufacturers.add(createManufacturer(new ManufacturerId("1"), "Bioherbal",
                     new Address("Envoy Ct.", "2056", "Clearwater", "USA", "33764")));
             manufacturers.add(createManufacturer(new ManufacturerId("2"), "Galafarm",
-                    new Address("St 51, Stopanski Dvor", "23", "Skopje", "North Macedonia", "1000")));
+                    new Address("St 51, Stopanski Dvor", "23", "Skopje", "Macedonia", "1000")));
             manufacturers.add(createManufacturer(new ManufacturerId("3"), "Probotanic",
                     new Address("Vučićev prolaz", "21a", "Beograd", "Serbia", "11050")));
             manufacturerRepository.saveAll(manufacturers);
