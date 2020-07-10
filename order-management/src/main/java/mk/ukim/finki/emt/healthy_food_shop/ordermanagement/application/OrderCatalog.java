@@ -8,11 +8,14 @@ import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.event.OrderIte
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.model.*;
 import mk.ukim.finki.emt.healthy_food_shop.ordermanagement.domain.repository.OrderRepository;
 import mk.ukim.finki.emt.healthy_food_shop.sharedkernel.domain.location.Address;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
 import java.time.Instant;
@@ -27,6 +30,7 @@ public class OrderCatalog {
 
     private final ApplicationEventPublisher applicationEventPublisher;
 
+    //@Resource(name="localValidatorFactoryBean")
     private final Validator validator;
 
     private ProductCatalog productCatalog;
